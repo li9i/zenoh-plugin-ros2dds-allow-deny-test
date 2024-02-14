@@ -20,7 +20,7 @@ git reset --hard fdf9a1af4f3
 
 ```
 cd ~/m2m/src
-git clone https://github.com/**************.git
+git clone git@github.com:li9i/zenoh-plugin-ros2dds-allow-deny-test.git
 ```
 
 
