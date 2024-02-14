@@ -1,0 +1,63 @@
+{
+  plugins: {
+
+    ros2dds: {
+      id: "id_publisher",
+
+      nodename: "zenoh_bridge_ros2dds_id_publisher",
+
+      // namespace: "/ns_publisher",
+
+      domain: 2,
+
+      // ros_localhost_only: true,
+      // shm_enabled: false,
+
+      //deny: {
+      //  publishers: ["/topic_denied"],
+      //},
+      //allow: {
+      //  publishers: ["/topic"],
+      //},
+
+      // pub_max_frequencies: [".*/laser_scan=5", "/tf=10"],
+      // pub_priorities: ["/pose=2", "/rosout=7"],
+      // reliable_routes_blocking: true,
+      // queries_timeout: {
+      //   //// default timeout that will apply to all query, except the ones specified below
+      //   //// in 'transient_local_subscribers', 'services' and 'actions'
+      //   default: 5.0,
+      //   //// timeouts for TRANSIENT_LOCAL subscriber when querying publishers for historical publications
+      //   transient_local_subscribers: 1.0,
+      //   //// timeouts for Service clients calling a Service server
+      //   services: ["add_two_ints=0.5", ".*=1.0"],
+      //   //// timeouts for Action clients calling an Action server (send_goal, cancel_goal and get_result services)
+      //   actions: {
+      //     send_goal: 1.0,
+      //     cancel_goal: 1.0,
+      //     get_result: [".*long_mission=3600", ".*short_action=10.0"],
+      //   }
+      // }
+    }, // ros2dds
+
+    // rest: {
+    //   http_port: 8000,
+    // },
+  }, // plugins
+
+  mode: "peer",
+
+  connect: {
+    endpoints: [
+      //"<proto>/<ip>:<port>"
+      "tcp/localhost:7447"
+    ]
+  },
+
+  listen: {
+    endpoints: [
+      //"<proto>/<ip>:<port>"
+      "tcp/localhost:7448"
+    ]
+  },
+} // end
